@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Example, ExampleWithManyStates } from "./Example";
+import Example from "./Example";
+import ExampleWithManyStates from "./ExampleWithManyStates";
 
 function App() {
   return (
