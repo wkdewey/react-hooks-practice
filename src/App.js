@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Example from "./Example";
 import ExampleWithManyStates from "./ExampleWithManyStates";
+import FriendStatus from "./FriendStatus";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       </header>
       <Example />
       <ExampleWithManyStates />
+      <FriendStatus />
     </div>
   );
 }
