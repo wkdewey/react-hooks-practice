@@ -2,7 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Example from "./Example";
 import ExampleWithManyStates from "./ExampleWithManyStates";
-import FriendStatus from "./FriendStatus";
+import FriendStatusWithCounter from "./FriendStatus";
+import FriendListItem from "./FriendListItem";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       </header>
       <Example />
       <ExampleWithManyStates />
-      <FriendStatus />
+      <FriendStatusWithCounter friend={{ id: 123 }} />
+      <FriendListItem friend={{ id: 500 }} />
     </div>
   );
 }
