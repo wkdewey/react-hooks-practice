@@ -6,10 +6,16 @@ function FriendStatusWithCounter(props) {
   useEffect(() => {
     document.title = `You clicked ${count} times`;
   });
-  const isOnline = useFriendStatus(props.friend.id);
+  const [isOnline, setIsOnline] = useState(null);
 
-  if (isOnline === null) {
-    return "Loading...";
+  useEffect(() => {
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    };
+  });
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
   }
   return isOnline ? "Online" : "Offline";
 }

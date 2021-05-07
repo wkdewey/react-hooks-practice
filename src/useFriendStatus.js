@@ -7,12 +7,12 @@ function useFriendStatus(friendID) {
     setIsOnline(status.isOnline);
   }
 
-  // useEffect(() => {
-  //   ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
-  //   return () => {
-  //     ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
-  //   };
-  // });
+  useEffect(() => {
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+    };
+  });
 
   return isOnline;
 }
